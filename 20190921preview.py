@@ -43,3 +43,6 @@ __author__ = 'Sunky'
 #     if i % 2 !=0:
 #         print(i)
 #         primeNum +=1
+
+
+#练习分支合并
