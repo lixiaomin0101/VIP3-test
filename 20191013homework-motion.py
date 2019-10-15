@@ -17,19 +17,19 @@ a = Person('小明','75.0')
 a.xweight()
 
 class Motion(Person):
-    def run(self,runing,eat):
-        self.weight = int(input('请输入小明体重'))
-        runing =int(input('请输入跑的公里数'))
+    def run(self):
+        self.weight = int(input('请输入小明体重：'))
+        runing =int(input('请输入跑的公里数：'))
         if runing>0:
            self.weight=self.weight -1
-           print(self.name+'跑步'+runing+'公里体重减少'+self.weight)
-        eat = int(input("请输入是否吃东西"))
+           print(self.name+'跑步：',runing,'公里。体重为:',self.weight)
+        eat = int(input("请输入吃的东西："))
         if eat>0:
             self.weight=self.weight +1
 
-            print(self.name+'吃馒头'+eat+'公里体重增加'+ self.weight)
+            print(self.name+'吃馒头',eat,'个。体重为', self.weight)
 b =Motion('张三',68)
-b.run(runing=0,eat=0)
+b.run()
 
 
 
