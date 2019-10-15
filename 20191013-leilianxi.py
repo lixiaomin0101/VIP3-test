@@ -27,12 +27,3 @@ __author__ = 'Sunky'
 # 2、实现gh为xx老师，在xx上班，一月工资xx
 # 3、名字是xx，工号为xx的老师，吃饭
 
-class Person():
-    def __init__(self,name,sex,age):
-        self.name=name
-        self.sex=sex
-        self.age=age
-    def teach(self,gh,kecheng,):
-        print(self.name+'老师'+self.sex+self.age+'岁'+)
-class Teacher(Person):
-
