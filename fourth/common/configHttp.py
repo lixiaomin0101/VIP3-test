@@ -1,15 +1,38 @@
 # coding:utf-8
-__author__ = 'ljy'
-#create_time = 2019.11.02
+import  requests
+class configHttp():
+    def get(self,url,param):
+        try:
+            repone = requests.get(url,params=param)
+            result =repone.text
+            return result
+        except Exception:
+            print("请求报错")
+            return None
+    def post(self,url,param):
+        try:
+            repone = requests.post(url, param)
+            result = repone.text
+            return result
+        except Exception:
+            print("Post请求报错")
+            return  None
+    def request(self,url,param,method):
+        if method =='get':
+            return self.get(url,param)
+        if method =='post':
+            return self.post(url,param)
 
-import os
-import codecs
-import configparser
-
-#获取该文件的真实路径，然后分割路径和文件名存入一个元组
-proDir = os.path.split(os.path.realpath(__file__))[0]
-#获取上层目录
-parDir = os.path.dirname(proDir)
-configPath = os.path.join(parDir,"config.ini")
-print('---',configPath)
-print('prodir:',proDir,configPath)
+ceshi =configHttp()
+# url='https://www.baidu.com/'
+# url='https://www.wanandroid.com/user/logout/json'
+# param={'username':'liangchao'}
+# print(param)
+# r = ceshi.request(url,param,'get')
+# print(r)
+#
+# url='https://www.wanandroid.com/user/login'
+# param={'username':'liangchao','password':'123456'}
+# print(param)
+# r = ceshi.request(url,param,'post')
+# print(r)

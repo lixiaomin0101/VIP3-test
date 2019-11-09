@@ -13,9 +13,11 @@ class  writeExcel():
     sheetname = w.sheetnames #在将写的文件创建sheet
 
     def writeResult(self,id,testdata,result):
-        ws =self.w['asserSheet']
+        ws =self.w['assertSheet']
         #写入数据
         ws.cell(id+1,3).value=testdata
         ws.cell(id+1,4).value=result
+        self.w.save(self.exec_dir)
 
-        self.w.save(self.exec_dir + '\\' + 'data.xls')
+wr = writeExcel()
+wr.writeResult(1, '11', 'Success')
